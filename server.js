@@ -25,12 +25,12 @@ app.get('/api/notes', function(req, res) {
 
 app.post('/api/notes', function(req, res) {
     const newNoteData = req.body
-    console.log( `[reservation] noteList(${noteList.length} entries), adding newNoteData: \n`, newNoteData )
+    console.log( `noteList(${noteList.length} entries), adding newNoteData: \n`, newNoteData )
     noteList.push( newNoteData )
     // save to a file, as a string like localStorage
     fs.writeFileSync( saveFile, JSON.stringify( noteList ) )
 
-    res.send( { message: `Reserved for *${newNoteData.name}*` } )
+    res.send( { message: `Saved *${newNoteData.title}*` } )
 });
     
 // Routes (Endpoints) =========================================
