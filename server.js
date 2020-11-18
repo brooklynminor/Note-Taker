@@ -39,11 +39,15 @@ app.post('/api/notes', function(req, res) {
 app.delete('/api/notes/:noteId', function(req, res) {
     const noteId = req.params.noteId
     console.log( `noteList(${noteList.length} entries), deleting note with ID: \n`, noteId )
-    noteId.push( newNoteData )
+    noteList.forEach( function( note, i ){
+        if( note.id===noteId){
+            noteList.splice( i, 1 )
+        }
+    })
     // save to a file, as a string like localStorage
     fs.writeFileSync( saveFile, JSON.stringify( noteList ) )
 
-    res.send( { message: `Deleted *${newNoteData.title}*` } )
+    res.send( { message: `Deleted *${noteId}*` } )
 });
 
 // Routes (Endpoints) =========================================
