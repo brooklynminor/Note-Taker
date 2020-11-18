@@ -1,4 +1,4 @@
-# Team-Profile-Generator
+# Note-Taker
 
 ## Objective
 In this assignment a server-side APIs using the Express.js framework is created. Express is the most widely used Node.js server framework. It will allow for quickly and easily established API routes and associated HTTP request methods.
